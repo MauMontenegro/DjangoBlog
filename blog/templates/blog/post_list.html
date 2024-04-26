@@ -3,21 +3,18 @@
 <head>
     <title> Mau's Blog</title>
 </head>
+
 <body>
     <header>
         <h1>Machine-Sheeps Blog</h1>
     </header>
 
+    {% for post in posts %}
     <article>
-        <time>Published: 25.04.2024, 16:06</time>
-        <h2> <a href=""> My ML Post </a> </h2>
-        <p> This is miy first Machine Learning post</p>
+        <time>published: {{post.published_date}}</time>
+        <h2><a href="">{{post.title}}</a></h2>
+        <p>{{post.text|linebreaksbr}}</p>
     </article>
-
-    <article>
-        <time>Published: 25.04.2024, 16:08</time>
-        <h2> <a href=""> My Django Post </a> </h2>
-        <p> This is miy first Django post</p>
-    </article>
+    {% endfor %}
 </body>
 </html>
